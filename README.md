@@ -4,6 +4,7 @@ A script that allow you to use multi ip camera using threads avoiding the lag or
 
 1. Create a folder where the snaps will be stored (default: dataset)
 2. Modify video_capture.py files, changing the list of ipcameras and cameras names
+3. Press ENTER to take a snap on all cameras, press Q to quit
 3. Thats all. Have fun!
 
 
