@@ -10,10 +10,11 @@ from VideoShow import VideoShow
 lst_video_getter = []
 lst_video_shower = []
 
-lst_ip_cam = ["http://root:root@192.168.0.10/mjpg/video.mjpg",
-			  "http://root:root@192.168.0.14/mjpg/video.mjpg",
-			  "rtsp://192.168.0.13:554/ch0"]
-lst_cam_name = ["160_domo","320_axis","640_flir"]
+# list the ip cams you want to access, and assign a name for each one
+lst_ip_cam = [0, # webcam
+	      "http://root:root@192.168.0.10/mjpg/video.mjpg",
+	      "rtsp://192.168.0.13:554/ch0"]
+lst_cam_name = ["cam1","cam2","cam3"]
 		  
 for i in range(len(lst_ip_cam)):
 	video_getter = VideoGet(lst_ip_cam[i]).start()
