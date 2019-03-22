@@ -7,11 +7,11 @@ class VideoShow:
 	Class that continuously shows a frame using a dedicated thread.
 	"""
 	
-	def __init__(self, frame=None, name="video"):
+	def __init__(self, frame=None, name="video",dataset_folder="dataset"):
 		self.frame = frame
 		self.name = name
 		self.stopped = False
-		self.dataset_folder = "dataset"
+		self.dataset_folder = dataset_folder
 		self.snap = False
 		
 		files = [img for img in os.listdir(self.dataset_folder+"/"+name) if img.endswith(".jpg")]
@@ -44,6 +44,8 @@ class VideoShow:
 		index = str(int(self.count)).zfill(3)
 		cv2.imwrite(self.dataset_folder+"/"+self.name+"/"+index+".jpg",self.frame)
 		cv2.imshow(self.name+" - frame",self.frame)
+		
+		# You can add a save file log of every snap here
 		
 		self.count += 1
 		self.snap = False
