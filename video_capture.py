@@ -15,8 +15,15 @@ lst_ip_cam = [0, # webcam
 	      "http://root:root@192.168.0.10/mjpg/video.mjpg",
 	      "rtsp://192.168.0.13:554/ch0"]
 lst_cam_name = ["cam1","cam2","cam3"]
+dataset_folder = "dataset"
+
+if not os.path.exists(dataset_folder):
+	os.makedirs(dataset_folder)
 		  
 for i in range(len(lst_ip_cam)):
+	if not os.path.exists(dataset_folder+"/"+lst_cam_name[i]):
+		os.makedirs(dataset_folder+"/"+lst_cam_name[i])
+		
 	video_getter = VideoGet(lst_ip_cam[i]).start()
 	lst_video_getter.append(video_getter)
 	lst_video_shower.append(VideoShow(video_getter.frame,lst_cam_name[i]).start())
