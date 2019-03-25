@@ -39,7 +39,7 @@ while ind in rango:
 		pass
 	elif key == 98: #(b)ad
 		pass
-	elif key == 32: #(b)ack
+	elif key == 32 or key == 8: #(b)ack
 		ind -= 1
 	else: #any or enter
 		ind += 1
