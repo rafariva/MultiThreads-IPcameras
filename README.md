@@ -8,7 +8,7 @@ A script that allow you to use multi ip camera using threads avoiding the lag or
 2. Press ENTER to take a snap on all cameras, press Q or ESC to quit
 
 3. For visualize all the captures, run view_captures.py
-  - Press ENTER for forward, SPACE for backward
+  - Press ENTER for forward, SPACE or BACKSPACE for backward
 
 Thats all. Have fun!
 
