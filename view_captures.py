@@ -2,7 +2,7 @@ import cv2
 import os
 from datetime import datetime
 
-sub_folders = ["cam1","cam2","cam3","cam4"]
+sub_folders = ["cam1","cam2","cam3"]
 dataset_folder = "dataset"
 
 min = 999
