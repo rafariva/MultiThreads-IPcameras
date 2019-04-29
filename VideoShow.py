@@ -41,7 +41,7 @@ class VideoShow:
 				print("taked")
 
 	def safe_snap(self):
-		index = str(int(self.count)).zfill(3)
+		index = str(int(self.count)).zfill(4)
 		cv2.imwrite(self.dataset_folder+"/"+self.name+"/"+index+".jpg",self.frame)
 		cv2.imshow(self.name+" - frame",self.frame)
 		
