@@ -22,13 +22,20 @@ class VideoShow:
 		Thread(target=self.show, args=()).start()
 		return self
 
-	def show(self):
+	global posX; posX = 0
+	
+	def show(self,width=380,height=240):
+		global posX
+		
 		cv2.namedWindow(self.name,cv2.WINDOW_NORMAL)
-		cv2.resizeWindow(self.name,320,240)
-		#cv2.moveWindow(self.name,x*170,100)
+		cv2.resizeWindow(self.name,width,height)
+		cv2.moveWindow(self.name,(width+30)*posX+60,50)
+		
 		cv2.namedWindow(self.name+" - frame",cv2.WINDOW_NORMAL)
-		cv2.resizeWindow(self.name+" - frame",320,240)
-		#cv2.moveWindow(self.name+" - frame",x*170,400)
+		cv2.resizeWindow(self.name+" - frame",width,height)
+		cv2.moveWindow(self.name+" - frame",(width+30)*posX+60,height+100)
+		
+		posX += 1
 
 		while not self.stopped:
 			cv2.imshow(self.name, self.frame)
